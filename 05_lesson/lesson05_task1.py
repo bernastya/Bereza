@@ -9,8 +9,8 @@ driver = webdriver.Chrome(
 driver.get("https://www.google.com/")
 driver.get("http://uitestingplayground.com/classattr/")
 
-sleep(10)
+sleep(5)
 
-driver.find_element(By.CLASS_NAME, "btn-primary").click()
+driver.find_element(By.CLASS_NAME, "btn.class3.btn-primary.btn-test").click()
 
 sleep(10)

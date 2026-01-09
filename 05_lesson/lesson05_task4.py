@@ -25,9 +25,9 @@ sleep(3)
 
 driver.find_element(By.TAG_NAME, 'i').click()
 
-text = driver.find_element(By.CSS_SELECTOR, "div#flash.flash.success").text
+text = driver.find_element(By.CSS_SELECTOR, "div#flash.flash.success")
 
-print(text)
+print(text.text)
 
 sleep(3)
 

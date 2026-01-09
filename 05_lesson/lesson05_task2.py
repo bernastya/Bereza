@@ -15,3 +15,5 @@ driver.find_element(By.XPATH, "//button[contains(concat(' ', normalize-space(@cl
 ' btn-primary ')]").click()
 
 sleep(10)
+
+#задание 2

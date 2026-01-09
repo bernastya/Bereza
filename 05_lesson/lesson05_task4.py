@@ -32,3 +32,5 @@ print(text.text)
 sleep(3)
 
 driver.quit()
+
+#задание 4

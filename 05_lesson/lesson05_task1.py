@@ -14,3 +14,5 @@ sleep(5)
 driver.find_element(By.CLASS_NAME, "btn.class3.btn-primary.btn-test").click()
 
 sleep(10)
+
+#задание1

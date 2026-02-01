@@ -7,7 +7,6 @@ class FormPage:
 
     def __init__(self, driver):
         self.driver = driver
-        self.driver.implicitly_wait(20)
         self.driver.get(
             "https://bonigarcia.dev/selenium-webdriver-java/data-types.html")
 
@@ -50,31 +49,14 @@ class FormPage:
         return self.zip_code_container
 
     def color_red(self):
-        wait = WebDriverWait(self.driver, 30)
-        self.zip_code_container = wait.until(
-            EC.presence_of_element_located((By.ID, "zip-code")))
-        return self.zip_code_container
+        return self.driver.find_element(By.ID,
+                                        "zip-code").get_attribute("class")
 
     def color_green(self):
-        self.success_elements = []
-        success_fields = ["first-name", "last-name", "address",
-                          "city", "country", "e-mail", "phone",
-                          "job-position", "company"]
-        for field_id in success_fields:
-            element = self.driver.find_element(By.ID, field_id)
-            self.success_elements.append(element)
-            return self.success_elements
-
-    def chek(self):
-        assert "alert-danger" in self.zip_code_container.get_attribute(
-            "class"), "Zip code не красный!"
-
-        for element in self.success_elements:
-            classes = element.get_attribute("class")
-            assert "alert-success" in classes, (
-                f"Поле {element.get_attribute('id')} не зеленое! "
-                f"Классы: {classes}"
-            )
+        fields = ["first-name", "last-name", "address", "city", "country",
+                  "e-mail", "phone", "job-position", "company"]
+        return [self.driver.find_element(By.ID, f).get_attribute("class")
+                for f in fields]
 
     def close_driver(self):
         self.driver.quit()

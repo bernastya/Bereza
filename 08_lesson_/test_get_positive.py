@@ -3,7 +3,7 @@ import requests
 base_url = "https://ru.yougile.com"
 
 my_headers = {
-        "Authorization": "Bearer KEY",
+        "Authorization": "Bearer key",
         "Content-Type": "application/json"
     }
 
@@ -14,7 +14,7 @@ def test_simple_reg():
 
 
 def test_projekt_id():
-    projekt_id = "1"
+    projekt_id = "b090f6d0-037a-4540-b190-7306dd2b5301"
     project_url = f"{base_url}/api-v2/projects/{projekt_id}"
     resp = requests.get(project_url, headers=my_headers)
     assert resp.status_code == 200

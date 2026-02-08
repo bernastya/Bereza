@@ -3,7 +3,7 @@ import requests
 base_url = "https://ru.yougile.com"
 
 my_headers = {
-        "Authorization": "Bearer KEY",
+        "Authorization": "Bearer key",
         "Content-Type": "application/json"
     }
 
